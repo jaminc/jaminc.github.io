@@ -1729,7 +1729,7 @@
 	header.major h2 {
 		color: #E53935
 ;
-		font-size: 3.5em;
+		font-size: 2.75em;
 	}
 
 		header.major h2 + p {
@@ -3075,17 +3075,20 @@
 	display: block;
 	position: relative;
 	width: 100%;
-	background: yellow;
+	/*background: yellow;*/
 }
 
 .skills-technologies > li {
 	float: left;
+
 	width: 20%;
-	background: brown;
+
+	text-align: center;
 	list-style: none;
+	/*background: brown;*/
 }
 
 .skills-technologies > li > img {
 	width: 100%;
-	background: blue;
+	/*background: blue;*/
 }
