@@ -3074,6 +3074,8 @@
 .skills-technologies {
 	display: block;
 	position: relative;
+	padding-top: 10px;
+
 	width: 100%;
 	/*background: yellow;*/
 }
@@ -3091,4 +3093,31 @@
 .skills-technologies > li > img {
 	width: 80%;
 	/*background: blue;*/
+}
+
+
+.contact-links {
+	list-style: none;
+	font-size: 70px;
+	padding-top: 20px;
+	/*background: yellow;*/
+}
+
+.contact-links > li {
+	display: block;
+	float: left;
+}
+
+.contact-links h4{
+	display: block;
+	padding-top: 30px;
+
+	text-align: center;
+	font-size: 20px;
+}
+
+.contact-links > li:last-child > a {
+	display: block;
+	box-sizing: border-box;
+	text-align: center;
 }
