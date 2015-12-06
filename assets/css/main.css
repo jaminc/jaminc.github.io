@@ -3125,3 +3125,8 @@
 .contact-links > a:active {
 	color: black;
 }
+
+/*.project-image:hover {
+	background: rgba(0,0,0,0.8);
+	z-index: -1;
+}*/
