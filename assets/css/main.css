@@ -2530,7 +2530,7 @@
 		}
 
 			#header > nav ul li {
-				border-top: solid 2px #5ccfb0;
+				border-top: solid 2px #9E9E9E;
 				display: block;
 				padding: 0;
 			}
@@ -2581,7 +2581,7 @@
 /* One */
 
 	#one:before {
-		background-image: url("../../images/nyc-skyline-ares-1.jpg");
+		background-image: url("../../images/cropped-nyc.png");
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: cover;
