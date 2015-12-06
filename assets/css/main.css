@@ -3070,3 +3070,22 @@
 			}
 
 	}
+
+.skills-technologies {
+	display: block;
+	position: relative;
+	width: 100%;
+	background: yellow;
+}
+
+.skills-technologies > li {
+	float: left;
+	width: 20%;
+	background: brown;
+	list-style: none;
+}
+
+.skills-technologies > li > img {
+	width: 100%;
+	background: blue;
+}
