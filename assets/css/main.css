@@ -1991,7 +1991,7 @@
 	.image {
 		border-radius: 5px;
 		border: 0;
-		display: inline-block;
+		/*display: inline-block;*/
 		position: relative;
 	}
 
@@ -2432,7 +2432,6 @@
 
 		.features article .image {
 			display: inline-block;
-			padding-right: 2.5em;
 			vertical-align: middle;
 			width: 48%;
 		}
@@ -2446,6 +2445,7 @@
 			display: inline-block;
 			vertical-align: middle;
 			width: 50%;
+			padding-left: 2.5em;
 		}
 
 			.features article .inner > :last-child {
@@ -3130,3 +3130,55 @@
 	background: rgba(0,0,0,0.8);
 	z-index: -1;
 }*/
+
+.project-links {
+	position: absolute;
+	display: block;
+
+	top: 0;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+	transition: opacity 0.5s;
+	opacity: 0;
+}
+
+.project-links:hover {
+	opacity: 1;
+}
+
+.project-link {
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+
+	padding: 10px;
+	border: 1px solid #fff;
+	background: #aaa;
+	color: #fff;
+
+	text-align: center;
+	width: 80px;
+	transition: background 0.2s;
+}
+
+.project-link:hover {
+	background: #000;
+	border-bottom: 1px solid white;
+}
+
+.project-link:active {
+	background: #E53935;
+}
+
+.image-live-link {
+	top: 30%;
+}
+
+.image-github-link {
+	top: 70%;
+}
