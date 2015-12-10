@@ -3099,13 +3099,18 @@
 .contact-links {
 	list-style: none;
 	font-size: 70px;
-	padding-top: 20px;
+	padding: 20px 0 0 0;
+	margin: auto;
 	/*background: yellow;*/
 }
 
 .contact-links > li {
+	box-sizing: border-box;
+	padding: 0;
+	text-align: center;
 	display: block;
 	float: left;
+	width: 33%;
 }
 
 .contact-links h4{
@@ -3125,6 +3130,28 @@
 .contact-links > a:active {
 	color: black;
 }
+
+.resume-link {
+	display: block;
+	margin: auto;
+	font-size: 70px;
+	padding-top: 60px;
+	text-align: center;
+}
+
+.resume-link > li {
+	display: block;
+	float: left;
+}
+
+.resume-link h4{
+	display: block;
+	padding-top: 30px;
+
+	text-align: center;
+	font-size: 20px;
+}
+
 
 /*.project-image:hover {
 	background: rgba(0,0,0,0.8);
@@ -3185,8 +3212,4 @@
 
 .single-link {
 	top: 50%;
-}
-
-.resume-link {
-
 }
