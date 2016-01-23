@@ -2581,7 +2581,7 @@
 /* One */
 
 	#one:before {
-		background-image: url("../../images/cropped-nyc.png");
+		background-image: url("../../images/nyc-skyline.png");
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: cover;
