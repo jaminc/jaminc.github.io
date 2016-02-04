@@ -2625,6 +2625,10 @@
 					color: inherit;
 				}
 
+.skills-technologies > li {
+	width: 16%;
+}
+
 /* XLarge */
 
 	@media screen and (max-width: 1680px) {
@@ -2683,6 +2687,10 @@
 
 			#wrapper {
 				padding-right: 20em;
+			}
+
+			.skills-technologies > li {
+				width: 25%;
 			}
 
 	}
@@ -2858,6 +2866,9 @@
 				transform: translateX(0);
 			}
 
+			.skills-technologies > li {
+				width: 21%;
+			}
 	}
 
 /* Small */
@@ -3069,6 +3080,9 @@
 				padding: 0;
 			}
 
+			.skills-technologies > li {
+				width: 33%;
+			}
 	}
 
 .skills-technologies {
@@ -3077,14 +3091,10 @@
 	padding-top: 10px;
 
 	width: 100%;
-	/*background: yellow;*/
 }
 
 .skills-technologies > li {
 	float: left;
-
-	width: 100px;
-
 	text-align: center;
 	list-style: none;
 }
@@ -3148,12 +3158,6 @@
 	text-align: center;
 	font-size: 20px;
 }
-
-
-/*.project-image:hover {
-	background: rgba(0,0,0,0.8);
-	z-index: -1;
-}*/
 
 .project-links {
 	position: absolute;
