@@ -3083,16 +3083,14 @@
 .skills-technologies > li {
 	float: left;
 
-	width: 20%;
+	width: 100px;
 
 	text-align: center;
 	list-style: none;
-	/*background: brown;*/
 }
 
 .skills-technologies > li > img {
 	width: 80%;
-	/*background: blue;*/
 }
 
 
@@ -3101,7 +3099,6 @@
 	font-size: 70px;
 	padding: 20px 0 0 0;
 	margin: auto;
-	/*background: yellow;*/
 }
 
 .contact-links > li {
