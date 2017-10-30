@@ -1729,7 +1729,7 @@
 	header.major h2 {
 		color: #E53935
 ;
-		font-size: 2.75em;
+		font-size: 2em;
 	}
 
 		header.major h2 + p {
@@ -2914,7 +2914,7 @@
 			}
 
 			header.major h2 {
-				font-size: 2.5em;
+				font-size: 1.5em;
 			}
 
 				header.major h2 + p {
