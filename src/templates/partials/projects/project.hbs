@@ -1,14 +1,17 @@
-<aritcle class="project">
-  <div class="project-container">
-    <div class="project-image-container">
-      {{> pictureImage}}
+<div class="project-container">
+  <a href="{{url}}" class="project-image-container margin-bottom-2v" aria-label="{{title}} project page">
+    {{> pictureImage title=""}}
+  </a>
+
+  <div class="project-details">
+    <h3 class="project-title h3 margin-bottom-1v">{{title}}</h3>
+    <div class="project-description margin-bottom-3v">
+      {{description}}
     </div>
 
-    <div class="project-details">
-      <h3 class="project-title h3">{{title}}</h3>
-      <div class="project-description">
-        {{description}}
-      </div>
+    <div class="project-links">
+      <a class="project-link" href="https://github.com/jaminc/{{url}}">github page</a>
+      <a class="project-link" href="{{url}}">project page</a>
     </div>
   </div>
-</aritcle>
+</div>

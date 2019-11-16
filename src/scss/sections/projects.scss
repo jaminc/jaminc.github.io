@@ -1,20 +1,26 @@
-.project:not(:last-of-type) {
-  display: block;
-  margin-bottom: rem-calc(30);
-}
-
 .project-image-container,
 .project-details {
   flex: 1 1 50%;
 }
 
-.project-image {
-  margin-bottom: rem-calc(10);
-  border-radius: 5px;
+.project-image-container {
+  display: block;
+
+  img {
+    border-radius: 5px;
+  }
 }
 
-.project-title {
-  margin-bottom: rem-calc(5);
+.project-details {
+  position: relative;
+}
+
+.project-links {
+  display: flex;
+}
+
+.project-link {
+  margin: auto;
 }
 
 @include breakpoint(medium) {
@@ -24,7 +30,7 @@
   }
 
   .project-image {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   .project-details {

@@ -24,3 +24,22 @@ img {
   width: 100%;
   height: auto;
 }
+
+a {
+  text-decoration: underline;
+  transition: color 0.4s;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $hover-font-color;
+  }
+}
+
+@for $i from 0 through 8 {
+  $val: $i * 5;
+
+  .margin-bottom-#{$i}v {
+    margin-bottom: rem-calc($val);
+  }
+}
