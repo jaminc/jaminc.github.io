@@ -8,6 +8,7 @@ class Sidebar {
 
   start() {
     this.sidebarContainer.addEventListener('click', e => e.stopPropagation());
+    this.sidebarButton.addEventListener('click', e => e.stopPropagation());
     // Fix for ios
     this.sidebarContainer.addEventListener('touchend', e => e.stopPropagation());
     this.sidebarButton.addEventListener('click', () => this.toggleSidebar());
