@@ -1,5 +1,5 @@
 <div class="project-container">
-  <a href="{{url}}" class="project-image-container margin-bottom-2v" aria-label="{{title}} project page">
+  <a href="{{#if projectPage}}{{url}}{{else}}https://github.com/jaminc/{{url}}{{/if}}" class="project-image-container margin-bottom-2v" aria-label="{{title}} project page">
     {{> pictureImage title=""}}
   </a>
 
@@ -11,7 +11,10 @@
 
     <div class="project-links">
       <a class="project-link" href="https://github.com/jaminc/{{url}}">github page</a>
-      <a class="project-link" href="{{url}}">project page</a>
+
+      {{#if projectPage}}
+          <a class="project-link" href="{{url}}">project page</a>
+      {{/if}}
     </div>
   </div>
 </div>
