@@ -1,0 +1,22 @@
+.job {
+  margin-top: rem-calc(20)
+}
+
+.job-company {
+  margin-top: rem-calc(12);
+}
+
+.job-timeframe {
+  margin-top: rem-calc(10);
+}
+
+.job-tasks {
+  margin-top: rem-calc(20);
+  padding-left: rem-calc(20);
+  list-style: disc;
+
+  li {
+    margin-top: rem-calc(5);
+  }
+}
+

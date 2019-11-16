@@ -1,0 +1,26 @@
+$link-vertical-spacing: rem-calc(40);
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -#{ $link-vertical-spacing }
+}
+
+.contact-link {
+  flex: 1 1 50%;
+  margin-top: $link-vertical-spacing;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: $common-font-color;
+  font-weight: bold;
+  text-align: center;
+
+  @include breakpoint(medium) {
+    flex: 0 1 25%;
+  }
+}
+
+.contact-link-icon {
+  margin: auto;
+  margin-bottom: rem-calc(10)
+}
