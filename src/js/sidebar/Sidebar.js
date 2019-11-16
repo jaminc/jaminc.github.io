@@ -1,5 +1,11 @@
+import { ESCAPE_KEY } from '../constants'
+
 class Sidebar {
   constructor() {
+    this.bindUIElements();
+  }
+
+  bindUIElements() {
     this.sidebarContainer = document.getElementById('sidebar-container');
     this.sidebarButton = document.getElementById('sidebar-trigger-button');
     this.sectionLinksContainer = document.getElementById('section-links');
@@ -8,12 +14,15 @@ class Sidebar {
 
   start() {
     this.sidebarContainer.addEventListener('click', e => e.stopPropagation());
+    this.sidebarButton.addEventListener('click', e => e.stopPropagation());
     // Fix for ios
     this.sidebarContainer.addEventListener('touchend', e => e.stopPropagation());
+    this.sidebarButton.addEventListener('touchend', e => e.stopPropagation());
+
     this.sidebarButton.addEventListener('click', () => this.toggleSidebar());
 
     document.addEventListener('keyup', event => {
-       if (event.key === "Escape") {
+       if (event.key === ESCAPE_KEY) {
          this.closeSidebar();
       }
     });
@@ -25,23 +34,17 @@ class Sidebar {
       event.preventDefault();
       const { target } = event.target.dataset;
 
-      // if(history.pushState) {
-      //   history.pushState(null, null, `#${ target }`);
-      // }
-      // else {
       location.hash = target;
 
       this.closeSidebar();
-      // }
     })
   }
 
   closeSidebar() {
     if (this.sidebarContainer.className.includes('show')) {
       this.toggleSidebar();
+      this.sidebarButton.focus()
     };
-
-    this.sidebarButton.focus()
   }
 
   toggleSidebar() {
