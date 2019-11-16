@@ -35,3 +35,11 @@ a {
     color: $hover-font-color;
   }
 }
+
+@for $i from 0 through 8 {
+  $val: $i * 5;
+
+  .margin-bottom-#{$i}v {
+    margin-bottom: rem-calc($val);
+  }
+}
