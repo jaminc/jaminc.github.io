@@ -24,3 +24,14 @@ img {
   width: 100%;
   height: auto;
 }
+
+a {
+  text-decoration: underline;
+  transition: color 0.4s;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $hover-font-color;
+  }
+}
