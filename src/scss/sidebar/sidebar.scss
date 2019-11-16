@@ -1,0 +1,93 @@
+.sidebar-container {
+  background: $background-color;
+  left: -#{ $sidebar-width };
+  text-align: center;
+  text-transform: capitalize;
+  transition: left 0.4s;
+  padding-top: rem-calc(40);
+  overflow: auto;
+
+  &.show {
+    left: 0;
+  }
+
+  @include breakpoint(medium) {
+    left: 0;
+  };
+}
+
+.sidebar-trigger-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: $page-header-height;
+  height: $page-header-height;
+  background: $background-color;
+  border: none;
+  cursor: pointer;
+  transition: left 0.4s;
+
+  @include breakpoint(medium) {
+    display: none;
+  };
+}
+
+.sidebar-container.show .sidebar-trigger-button {
+  left: calc(100% - #{ $page-header-height });
+}
+
+.sidebar-container.show .sidebar-trigger-button-icon {
+  background: $close;
+}
+
+.sidebar-image-container {
+  width: rem-calc(100);
+  margin: auto;
+}
+
+.sidebar-image {
+  border-radius: 50%;
+}
+
+.sidebar-header {
+  margin-top: rem-calc(30);
+}
+
+.sidebar-title {
+  color: $header-light-color;
+  text-align: center;
+}
+
+.sidebar-secondary-header {
+  margin-top: rem-calc(20);
+  font-size: rem-calc(16);
+  font-style: italic;
+  color: $header-secondary-light-color;
+}
+
+.section-links {
+  margin-top: rem-calc(30);
+  margin-bottom: rem-calc(50);
+}
+
+.section-link {
+  display: block;
+  padding: rem-calc(20 0);
+  color: $header-light-color;
+  font-weight: bold;
+  transition: background 0.4s, color 0.4s;
+
+  &:not(:first-of-type) {
+    border-top: 1px solid $border-color;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $header-color;
+    background: $background-light-color;
+  }
+}

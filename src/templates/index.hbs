@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jamin Cheung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  </head>
+
+  <body>
+    <div class="sidebar-and-page-content">
+      <section class="sidebar">
+        {{> sidebar/sidebar}}
+      </section>
+
+      <div class="page-content">
+        <section class="page-header">
+          {{> pageHeader/pageHeader}}
+        </section>
+
+        <div class="cover-image-container">
+          {{> pictureImage
+            imageSrc="../assets/images/new-york-cover/new-york-cover.jpg"
+            webpImageSrc="../assets/images/new-york-cover/new-york-cover.webp"
+            title="cover image"
+            classes="cover-image"
+          }}
+        </div>
+
+        <div class="main-sections">
+          <section id="about-me" class="about-me main-section">
+            <div class="container">
+              {{> aboutMe/aboutMe}}
+            </div>
+          </section>
+
+          <section id="work-experience" class="work-experience main-section">
+            <div class="container">
+              {{> workExperience/workExperience}}
+            </div>
+          </section>
+
+          <section id="projects" class="projects main-section">
+            <div class="container">
+              {{> projects/projects}}
+            </div>
+          </section>
+
+          <section id="contact-me" class="contact-me main-section">
+            <div class="container">
+              {{> contactMe/contactMe}}
+            </div>
+          </section>
+        </div>
+
+        <section class="footer">
+          <p class="footer-copyright text-center">© Jamin Cheung.  All Rights Reserved.</p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
+

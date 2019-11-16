@@ -1,0 +1,33 @@
+.project:not(:last-of-type) {
+  display: block;
+  margin-bottom: rem-calc(30);
+}
+
+.project-image-container,
+.project-details {
+  flex: 1 1 50%;
+}
+
+.project-image {
+  margin-bottom: rem-calc(10);
+  border-radius: 5px;
+}
+
+.project-title {
+  margin-bottom: rem-calc(5);
+}
+
+@include breakpoint(medium) {
+  .project-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .project-image {
+      margin-bottom: 0;
+  }
+
+  .project-details {
+    margin-left: rem-calc(20);
+  }
+};

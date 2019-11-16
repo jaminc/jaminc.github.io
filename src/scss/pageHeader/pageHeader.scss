@@ -1,0 +1,24 @@
+.page-header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.page-header-spacer,
+.page-header-container {
+  background: $background-secondary-color;
+  height: $page-header-height;
+
+  @include breakpoint(medium) {
+    display: none;
+  };
+}
+
+.header-title {
+  padding: rem-calc(10 15);
+  font-size: rem-calc(17);
+  letter-spacing: rem-calc(1);
+  color: $header-light-color;
+  text-align: center;
+}

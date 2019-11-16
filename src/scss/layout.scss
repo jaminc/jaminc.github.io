@@ -1,0 +1,44 @@
+$page-header-height: rem-calc(45);
+$sidebar-width: rem-calc(275);
+
+.page-content {
+  width: 100%;
+}
+
+.main-section {
+  padding: rem-calc(40 20);
+  border-top: rem-calc(6) solid $border-color;
+
+  &:first-of-type {
+    border-top: none;
+  }
+}
+
+.container {
+  margin: auto;
+  max-width: rem-calc(960);
+
+  @include breakpoint(large) {
+    padding-left: rem-calc(50);
+    padding-right: rem-calc(50);
+  };
+}
+
+.sidebar-and-page-content {
+  display: flex;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  min-height: 100vh;
+  width: $sidebar-width;
+  z-index: 1;
+}
+
+@include breakpoint(medium) {
+  .page-content {
+    margin-left: $sidebar-width;
+  }
+};
