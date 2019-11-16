@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "deploy": "git stash && git checkout master && npm run build && git add -A && git commit -m 'Redeploy' && git push"
   },
   "repository": {
     "type": "git",
