@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
@@ -10,6 +11,11 @@ const config = merge.smartStrategy({ 'module.rules.use': 'prepend' })(common, {
     hot: true,
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Jamin Cheung',
+      favicon: 'src/assets/images/jamin-cheung/jamin-cheung.jpg',
+      template: 'src/templates/index.hbs',
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ],
   module: {

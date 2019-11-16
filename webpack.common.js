@@ -1,22 +1,12 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].[hash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'inline-source-map',
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Jamin Cheung',
-      favicon: 'src/assets/images/jamin-cheung/jamin-cheung.jpg',
-      template: 'src/templates/index.hbs'
-    })
-  ],
   module: {
     rules: [
       {
