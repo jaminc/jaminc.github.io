@@ -16,33 +16,6 @@
   };
 }
 
-.sidebar-trigger-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: $page-header-height;
-  height: $page-header-height;
-  background: $background-color;
-  border: none;
-  cursor: pointer;
-  transition: left 0.4s;
-
-  @include breakpoint(medium) {
-    display: none;
-  };
-}
-
-.sidebar-container.show .sidebar-trigger-button {
-  left: calc(100% - #{ $page-header-height });
-}
-
-.sidebar-container.show .sidebar-trigger-button-icon {
-  background: $close;
-}
-
 .sidebar-image-container {
   width: rem-calc(100);
   margin: auto;

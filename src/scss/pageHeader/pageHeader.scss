@@ -15,6 +15,23 @@
   };
 }
 
+.sidebar-trigger-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $page-header-height;
+  height: 100%;
+  background: $background-color;
+  border: none;
+
+  @include breakpoint(medium) {
+    display: none;
+  };
+}
+
 .header-title {
   padding: rem-calc(10 15);
   font-size: rem-calc(17);
