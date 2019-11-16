@@ -11,13 +11,16 @@
   }
 }
 
+.project-details {
+  position: relative;
+}
+
 .project-links {
   display: flex;
-  justify-content: center;
 }
 
 .project-link {
-  padding: rem-calc(0 10);
+  margin: auto;
 }
 
 @include breakpoint(medium) {
