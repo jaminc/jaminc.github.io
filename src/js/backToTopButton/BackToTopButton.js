@@ -1,0 +1,64 @@
+import template from '../../templates/partials/backToTopButton/backToTopButton.hbs';
+import '../../scss/backToTopButton/BackToTopButton.scss';
+
+function resetFocus() {
+  document.activeElement.blur();
+}
+
+function scrollToTop(duration = 400) {
+  if (!window.requestAnimationFrame) {
+    window.scrollTo(0, 0);
+    resetFocus();
+    return;
+  }
+
+  const cosParameter = window.pageYOffset / 2;
+  let scrollCount = 0;
+  let oldTimestamp = performance.now();
+
+  function step(newTimestamp) {
+    scrollCount += Math.PI / (duration / (newTimestamp - oldTimestamp));
+    if (scrollCount >= Math.PI) window.scrollTo(0, 0);
+    if (window.pageYOffset === 0) {
+      resetFocus();
+      return;
+    }
+    window.scrollTo(0, Math.round(cosParameter + (cosParameter * Math.cos(scrollCount))));
+    oldTimestamp = newTimestamp;
+    window.requestAnimationFrame(step);
+  }
+
+  window.requestAnimationFrame(step);
+}
+
+function templateToHTML(templateString) {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = templateString;
+  return tempDiv.firstElementChild;
+}
+
+const OFFSET_TO_APPEAR = 100;
+
+export default class BackToTopButton {
+  constructor(options = {}) {
+    this.offsetToAppear = options.offsetToAppear || OFFSET_TO_APPEAR;
+    this.button = templateToHTML(template());
+  }
+
+  start() {
+    document.body.appendChild(this.button);
+
+    this.updateButtonVisibility();
+
+    window.addEventListener('scroll', () => this.updateButtonVisibility());
+    this.button.addEventListener('click', () => scrollToTop());
+  }
+
+  updateButtonVisibility() {
+    if (window.pageYOffset > this.offsetToAppear) {
+      this.button.classList.add('show');
+    } else {
+      this.button.classList.remove('show');
+    }
+  }
+}
