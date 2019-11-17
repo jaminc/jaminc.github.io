@@ -1,24 +1,35 @@
 import Sidebar from './sidebar/Sidebar';
+import Model from './state/Model';
+import {
+  getScrollbarWidth,
+} from './util/util';
 
-function onScroll() {
-  window.removeEventListener('scroll', onScroll);
-
-  import(/* webpackChunkName: 'BackToTopButton' */ './backToTopButton/BackToTopButton')
-    .then(({ default: BackToTopButton }) => {
-      const backToTopButton = new BackToTopButton();
-
-      backToTopButton.start();
-    });
-}
-
-const PageApp = {
+class Application {
   start() {
-    const sidebar = new Sidebar();
+    this.model = new Model({
+      scrollbarWidth: getScrollbarWidth(),
+    });
 
-    sidebar.start();
+    this.sidebar = new Sidebar({ model: this.model });
+    this.sidebar.start();
+
+    this.startBTTButtonOnScroll(this.model);
+  }
+
+  startBTTButtonOnScroll(model) {
+    const onScroll = () => {
+      window.removeEventListener('scroll', onScroll);
+
+      import(/* webpackChunkName: 'BackToTopButton' */ './backToTopButton/BackToTopButton')
+        .then(({ default: BackToTopButton }) => {
+          this.backToTopButton = new BackToTopButton({ model });
+
+          this.backToTopButton.start();
+        });
+    };
 
     window.addEventListener('scroll', onScroll);
-  },
-};
+  }
+}
 
-export default PageApp;
+export default Application;
