@@ -5,8 +5,6 @@ const PageApp = {
     const sidebar = new Sidebar();
 
     sidebar.start();
-
-    console.log('IJGOIOIDGOIJDG');
   },
 };
 
