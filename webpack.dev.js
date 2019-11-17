@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 const common = require('./webpack.common.js');
+const webpack = require('webpack');
 
 const config = merge.smartStrategy({ 'module.rules.use': 'prepend' })(common, {
   mode: 'development',
@@ -21,24 +21,13 @@ const config = merge.smartStrategy({ 'module.rules.use': 'prepend' })(common, {
   module: {
     rules: [
       {
-        test: /\.js?$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        exclude: /node_modules/,
-        options: {
-          emitWarning: true,
-          fix: true,
-          configFile: './.eslintrc.js',
-        },
-      },
-      {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader',
-        ],
+          "style-loader",
+        ]
       },
-    ],
-  },
+    ]
+  }
 });
 
 module.exports = config;

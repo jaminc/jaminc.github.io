@@ -5,7 +5,8 @@ const PageApp = {
     const sidebar = new Sidebar();
 
     sidebar.start();
-    sidebar.bindUIElements();
+
+    console.log('IJGOIOIDGOIJDG');
   },
 };
 

@@ -31,21 +31,21 @@ module.exports = {
       {
         test: /\.hbs$/,
         use: {
-          loader: 'handlebars-loader',
+          loader: "handlebars-loader",
           query: {
-            inlineRequires: '/images/',
-            partialDirs: [
-              path.join(__dirname, 'src', 'templates', 'partials'),
-            ],
-          },
+                  inlineRequires: '/images/',
+                  partialDirs: [
+                      path.join(__dirname, 'src', 'templates', 'partials')
+                  ]
+              }
         },
       },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          'css-loader', // translates CSS into CommonJS
-          'sass-loader', // compiles Sass to CSS, using Node Sass by default
-        ],
+            "css-loader", // translates CSS into CommonJS
+            "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        ]
       },
       {
         test: /\.m?js$/,
@@ -54,10 +54,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread'],
-          },
-        },
-      },
-    ],
-  },
+            plugins: ['@babel/plugin-proposal-object-rest-spread']
+          }
+        }
+      }
+    ]
+  }
 };
