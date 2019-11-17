@@ -21,6 +21,17 @@ const config = merge.smartStrategy({ 'module.rules.use': 'prepend' })(common, {
   module: {
     rules: [
       {
+        test: /\.js?$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        options: {
+          emitWarning: true,
+          fix: true,
+          configFile: './.eslintrc.js',
+        },
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           'style-loader',

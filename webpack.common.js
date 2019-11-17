@@ -6,21 +6,9 @@ module.exports = {
     filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  devtool: 'source-map',
-  // devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
-      // {
-      //   test: /\.js?$/,
-      //   enforce: 'pre',
-      //   loader: 'eslint-loader',
-      //   exclude: /node_modules/,
-      //   options: {
-      //     emitWarning: true,
-      //     fix: true,
-      //     configFile: './.eslintrc.js',
-      //   },
-      // },
       {
         test: /\.(png|jpe?g|gif|webp)$/,
         use: [
