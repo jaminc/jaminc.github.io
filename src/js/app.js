@@ -1,40 +1,52 @@
-import Sidebar from './sidebar/Sidebar';
-import PageHeader from './pageHeader/PageHeader';
 import Model from './state/Model';
 import {
   getScrollbarWidth,
+  isSmallWidth,
 } from './util/util';
+import {
+  resolveOnScroll,
+  resolveOnWindowWidth,
+} from './util/LazyLoadUtil';
 
 class Application {
-  start() {
+  constructor() {
     this.model = new Model({
       scrollbarWidth: getScrollbarWidth(),
     });
-
-    this.sidebar = new Sidebar({ model: this.model });
-    this.sidebar.start();
-
-    this.pageHeader = new PageHeader({ model: this.model });
-    this.pageHeader.start();
-
-    this.startBTTButtonOnScroll(this.model);
-
-    console.log('spodkf');
   }
 
-  startBTTButtonOnScroll(model) {
-    const onScroll = () => {
-      window.removeEventListener('scroll', onScroll);
+  async start() {
+    this.loadViews();
+  }
 
-      import(/* webpackChunkName: 'BackToTopButton' */ './backToTopButton/BackToTopButton')
-        .then(({ default: BackToTopButton }) => {
-          this.backToTopButton = new BackToTopButton({ model });
+  static views() {
+    return [
+      {
+        lazyLoadView: () => import(/* webpackChunkName: 'BackToTopButton' */ './backToTopButton/BackToTopButton'),
+        lazyLoadConditional: resolveOnScroll(),
+      },
+      {
+        lazyLoadView: () => import(/* webpackChunkName: 'Sidebar' */ './sidebar/Sidebar'),
+        lazyLoadConditional: resolveOnWindowWidth(isSmallWidth),
+      },
+      {
+        lazyLoadView: () => import(/* webpackChunkName: 'PageHeader' */ './pageHeader/PageHeader'),
+        lazyLoadConditional: resolveOnWindowWidth(isSmallWidth),
+      },
+    ];
+  }
 
-          this.backToTopButton.start();
-        });
-    };
+  loadViews() {
+    Application.views().forEach(async (viewObject) => {
+      if (viewObject.lazyLoadConditional) {
+        await viewObject.lazyLoadConditional;
+      }
 
-    window.addEventListener('scroll', onScroll);
+      const View = await viewObject.lazyLoadView().then(({ default: Constructor }) => Constructor);
+
+      const viewInstance = new View({ model: this.model });
+      viewInstance.start();
+    });
   }
 }
 
