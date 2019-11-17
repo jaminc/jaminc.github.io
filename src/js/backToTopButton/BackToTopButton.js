@@ -41,6 +41,7 @@ const OFFSET_TO_APPEAR = 300;
 
 export default class BackToTopButton {
   constructor(options = {}) {
+    Object.assign(this, options);
     this.offsetToAppear = options.offsetToAppear || OFFSET_TO_APPEAR;
     this.button = templateToHTML(template());
   }
@@ -52,13 +53,26 @@ export default class BackToTopButton {
 
     window.addEventListener('scroll', () => this.updateButtonVisibility());
     this.button.addEventListener('click', () => scrollToTop());
+    this.model.subscribeToSidebarOpenState(this.onChangeSideBarOpenState.bind(this));
   }
 
   updateButtonVisibility() {
-    if (window.pageYOffset > this.offsetToAppear) {
+    this.setButtonVisibility(window.pageYOffset > this.offsetToAppear);
+  }
+
+  setButtonVisibility(show) {
+    if (show) {
       this.button.classList.add('show');
     } else {
       this.button.classList.remove('show');
+    }
+  }
+
+  onChangeSideBarOpenState(isOpen) {
+    if (isOpen) {
+      window.setTimeout(() => this.setButtonVisibility(!isOpen));
+    } else {
+      this.updateButtonVisibility();
     }
   }
 }
