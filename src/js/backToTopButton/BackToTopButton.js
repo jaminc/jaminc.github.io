@@ -37,7 +37,7 @@ function templateToHTML(templateString) {
   return tempDiv.firstElementChild;
 }
 
-const OFFSET_TO_APPEAR = 100;
+const OFFSET_TO_APPEAR = 300;
 
 export default class BackToTopButton {
   constructor(options = {}) {
