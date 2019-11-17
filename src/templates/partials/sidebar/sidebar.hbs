@@ -1,24 +1,28 @@
-<div id="sidebar-container" class="sidebar-container">
-  <div class="sidebar-image-container">
-    {{> pictureImage
-      imageSrc="../../../assets/images/jamin-cheung/jamin-cheung.jpg"
-      webpImageSrc="../../../assets/images/jamin-cheung/jamin-cheung.webp"
-      title="jamin cheung"
-      alt="jamin cheung profile picture"
-      classes="sidebar-image"
-    }}
+<div class="sidebar-and-mask-container">
+  <div id="sidebar-container" class="sidebar-container">
+    <div class="sidebar-image-container">
+      {{> pictureImage
+        imageSrc="../../../assets/images/jamin-cheung/jamin-cheung.jpg"
+        webpImageSrc="../../../assets/images/jamin-cheung/jamin-cheung.webp"
+        title="jamin cheung"
+        alt="jamin cheung profile picture"
+        classes="sidebar-image"
+      }}
+    </div>
+
+    <header class="sidebar-header">
+      <h1 class="sidebar-title h2">jamin cheung</h1>
+
+      <h3 class="sidebar-secondary-header">web developer</h3>
+    </header>
+
+    <div id="section-links" class="section-links">
+      <a href="#about-me" data-target="about-me" class="about-me-link section-link">about me</a>
+      <a href="#work-experience" data-target="work-experience" class="work-experience-link section-link">work experience</a>
+      <a href="#projects" data-target="projects" class="projects-link section-link">projects</a>
+      <a href="#contact-me" data-target="contact-me" class="contact-me-link section-link">contact me</a>
+    </div>
   </div>
 
-  <header class="sidebar-header">
-    <h1 class="sidebar-title h2">jamin cheung</h1>
-
-    <h3 class="sidebar-secondary-header">web developer</h3>
-  </header>
-
-  <div id="section-links" class="section-links">
-    <a href="#about-me" data-target="about-me" class="about-me-link section-link">about me</a>
-    <a href="#work-experience" data-target="work-experience" class="work-experience-link section-link">work experience</a>
-    <a href="#projects" data-target="projects" class="projects-link section-link">projects</a>
-    <a href="#contact-me" data-target="contact-me" class="contact-me-link section-link">contact me</a>
-  </div>
+  <div class="sidebar-mask"></div>
 </div>

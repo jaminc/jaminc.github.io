@@ -8,7 +8,8 @@ import {
 } from '../util/util';
 
 class Sidebar {
-  constructor() {
+  constructor(options = {}) {
+    Object.assign(this, options);
     this.bindUIElements();
   }
 
@@ -17,8 +18,6 @@ class Sidebar {
     this.sidebarButton = document.getElementById('sidebar-trigger-button');
     this.sectionLinksContainer = document.getElementById('section-links');
     this.sectionLinks = Array.from(document.getElementsByClassName('section-link'));
-
-    this.isOpen = false;
   }
 
   start() {
@@ -36,9 +35,12 @@ class Sidebar {
 
     this.sectionLinksContainer.addEventListener('click', this.onClickSectionLink.bind(this));
 
-    this.setSectionLinksFocusable(!!this.isOpen);
+    this.setSectionLinksFocusable(!!this.isOpen());
 
     listenToChangeToSmallWidth(() => this.closeSidebar());
+    this.model.subscribeToSidebarOpenState(this.onChangeSideBarOpenState.bind(this));
+
+    return this;
   }
 
   setSectionLinksFocusable(enable) {
@@ -52,20 +54,33 @@ class Sidebar {
       return;
     }
 
-    if (this.isOpen) {
+    if (this.isOpen()) {
       this.toggleSidebar();
       this.sidebarButton.focus();
     }
   }
 
   toggleSidebar() {
-    this.isOpen = this.sidebarContainer.classList.toggle('show');
+    this.model.updateSidebarOpenState(!this.isOpen());
+  }
 
-    this.setSectionLinksFocusable(!!this.isOpen);
+  onChangeSideBarOpenState(isOpen) {
+    this.setSectionLinksFocusable(isOpen);
 
-    if (this.isOpen) {
+    if (isOpen) {
+      document.body.classList.add('show');
       this.sectionLinks[0].focus();
+    } else {
+      document.body.classList.remove('show');
     }
+
+    document.body.style.paddingRight = isOpen
+      ? `${this.model.getState().scrollbarWidth}px`
+      : '';
+  }
+
+  isOpen() {
+    return this.model.getState().isSidebarOpen;
   }
 
   onClickSidebarButton(event) {
@@ -90,7 +105,7 @@ class Sidebar {
   }
 
   onKeydown(event) {
-    if (!isSmallWidth() || !this.isOpen) {
+    if (!isSmallWidth() || !this.isOpen()) {
       return;
     }
 

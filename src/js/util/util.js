@@ -37,3 +37,30 @@ export const listenToChangeToSmallWidth = (callback) => {
     changeToSmallCallbacks.push(callback);
   }
 };
+
+export const getScrollbarWidth = () => {
+  // Find the difference between the width of a container with a scrollbar to the width
+  // of an element inside the container to get the scrollbar width
+  const outerEl = document.createElement('div');
+
+  outerEl.style.visibility = 'hidden';
+  outerEl.style.width = '100px';
+  outerEl.style.msOverflowStyle = 'scrollbar';
+  outerEl.style.overflow = 'scroll';
+
+  document.body.appendChild(outerEl);
+
+  const widthNoScrollbar = outerEl.offsetWidth;
+
+  // Add inner el
+  const innerEl = document.createElement('div');
+
+  innerEl.style.width = '100%';
+  outerEl.appendChild(innerEl);
+
+  const widthWithScrollbar = innerEl.offsetWidth;
+
+  outerEl.parentNode.removeChild(outerEl);
+
+  return widthNoScrollbar - widthWithScrollbar || 0;
+};

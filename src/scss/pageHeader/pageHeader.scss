@@ -4,7 +4,6 @@
   left: 0;
   width: 100%;
   background: $background-secondary-color;
-  z-index: 1;
 }
 
 .page-header-spacer,
@@ -34,7 +33,7 @@
 }
 
 .header-title {
-  padding: rem-calc(10 15);
+  padding: rem-calc(10 0);
   font-size: rem-calc(17);
   letter-spacing: rem-calc(1);
   color: $header-light-color;
