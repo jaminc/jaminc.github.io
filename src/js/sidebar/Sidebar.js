@@ -2,7 +2,10 @@ import {
   ESCAPE_KEY,
   TAB_KEY,
 } from '../constants';
-import { isSmallWidth } from '../util/util';
+import {
+  isSmallWidth,
+  debounce,
+} from '../util/util';
 
 class Sidebar {
   constructor() {
@@ -20,12 +23,10 @@ class Sidebar {
 
   start() {
     this.sidebarContainer.addEventListener('click', (e) => e.stopPropagation());
-    this.sidebarButton.addEventListener('click', (e) => e.stopPropagation());
+    this.sidebarButton.addEventListener('click', this.onClickSidebarButton.bind(this));
     // Fix for ios
     this.sidebarContainer.addEventListener('touchend', (e) => e.stopPropagation());
-    this.sidebarButton.addEventListener('touchend', (e) => e.stopPropagation());
-
-    this.sidebarButton.addEventListener('click', () => this.toggleSidebar());
+    this.sidebarButton.addEventListener('touchend', this.onClickSidebarButton.bind(this));
 
     document.addEventListener('keyup', this.onKeyup.bind(this));
     document.addEventListener('keydown', this.onKeydown.bind(this));
@@ -37,6 +38,8 @@ class Sidebar {
     this.sectionLinksContainer.addEventListener('click', this.onClickSectionLink.bind(this));
 
     this.setSectionLinksFocusable(!!this.isOpen);
+
+    window.addEventListener('resize', debounce(this.onWindowResize.bind(this), 500));
   }
 
   setSectionLinksFocusable(enable) {
@@ -64,6 +67,12 @@ class Sidebar {
     if (this.isOpen) {
       this.sectionLinks[0].focus();
     }
+  }
+
+  onClickSidebarButton(event) {
+    event.stopPropagation();
+
+    this.toggleSidebar();
   }
 
   onClickSectionLink(event) {
@@ -102,6 +111,10 @@ class Sidebar {
         firstFocusable.focus();
       }
     }
+  }
+
+  onWindowResize() {
+    this.closeSidebar();
   }
 }
 
