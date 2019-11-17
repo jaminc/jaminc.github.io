@@ -3,11 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
+  background: $background-secondary-color;
+  z-index: 1;
 }
 
 .page-header-spacer,
 .page-header-container {
-  background: $background-secondary-color;
   height: $page-header-height;
 
   @include breakpoint(medium) {

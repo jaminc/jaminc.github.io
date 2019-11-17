@@ -4,7 +4,7 @@ import {
 } from '../constants';
 import {
   isSmallWidth,
-  debounce,
+  listenToChangeToSmallWidth,
 } from '../util/util';
 
 class Sidebar {
@@ -26,7 +26,6 @@ class Sidebar {
     this.sidebarButton.addEventListener('click', this.onClickSidebarButton.bind(this));
     // Fix for ios
     this.sidebarContainer.addEventListener('touchend', (e) => e.stopPropagation());
-    this.sidebarButton.addEventListener('touchend', this.onClickSidebarButton.bind(this));
 
     document.addEventListener('keyup', this.onKeyup.bind(this));
     document.addEventListener('keydown', this.onKeydown.bind(this));
@@ -39,7 +38,7 @@ class Sidebar {
 
     this.setSectionLinksFocusable(!!this.isOpen);
 
-    window.addEventListener('resize', debounce(this.onWindowResize.bind(this), 500));
+    listenToChangeToSmallWidth(() => this.closeSidebar());
   }
 
   setSectionLinksFocusable(enable) {
@@ -111,10 +110,6 @@ class Sidebar {
         firstFocusable.focus();
       }
     }
-  }
-
-  onWindowResize() {
-    this.closeSidebar();
   }
 }
 
