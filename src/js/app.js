@@ -18,6 +18,8 @@ class Application {
     this.pageHeader.start();
 
     this.startBTTButtonOnScroll(this.model);
+
+    console.log('spodkf');
   }
 
   startBTTButtonOnScroll(model) {
