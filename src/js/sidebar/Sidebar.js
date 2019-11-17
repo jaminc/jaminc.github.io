@@ -3,6 +3,7 @@ import { ESCAPE_KEY } from '../constants';
 class Sidebar {
   constructor() {
     this.bindUIElements();
+    this.bindUIElements();
   }
 
   bindUIElements() {
