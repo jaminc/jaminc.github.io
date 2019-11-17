@@ -1,4 +1,5 @@
 import Sidebar from './sidebar/Sidebar';
+import PageHeader from './pageHeader/PageHeader';
 import Model from './state/Model';
 import {
   getScrollbarWidth,
@@ -12,6 +13,9 @@ class Application {
 
     this.sidebar = new Sidebar({ model: this.model });
     this.sidebar.start();
+
+    this.pageHeader = new PageHeader({ model: this.model });
+    this.pageHeader.start();
 
     this.startBTTButtonOnScroll(this.model);
   }
