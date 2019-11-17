@@ -11,13 +11,13 @@ module.exports = {
     rules: [
       {
         test: /\.js?$/,
-        enforce: "pre",
-        loader: "eslint-loader",
+        enforce: 'pre',
+        loader: 'eslint-loader',
         exclude: /node_modules/,
         options: {
           emitWarning: true,
           fix: true,
-          configFile: "./.eslintrc.js"
+          configFile: './.eslintrc.js',
         },
       },
       {

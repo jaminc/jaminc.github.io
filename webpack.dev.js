@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
 const webpack = require('webpack');
+const common = require('./webpack.common.js');
 
 const config = merge.smartStrategy({ 'module.rules.use': 'prepend' })(common, {
   mode: 'development',
@@ -23,11 +23,11 @@ const config = merge.smartStrategy({ 'module.rules.use': 'prepend' })(common, {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          "style-loader",
-        ]
+          'style-loader',
+        ],
       },
-    ]
-  }
+    ],
+  },
 });
 
 module.exports = config;
