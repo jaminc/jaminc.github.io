@@ -1,3 +1,5 @@
+import { SCROLLBAR_WIDTH } from '../constants';
+
 class PageHeader {
   constructor(options = {}) {
     Object.assign(this, options);
@@ -14,7 +16,7 @@ class PageHeader {
 
   onChangeSideBarOpenState(isOpen) {
     this.pageHeaderTitle.style.paddingRight = isOpen
-      ? `${this.model.getState().scrollbarWidth}px`
+      ? `${this.model.requestState(SCROLLBAR_WIDTH)}px`
       : '';
   }
 }

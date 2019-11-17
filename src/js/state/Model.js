@@ -11,6 +11,10 @@ class Model {
     };
   }
 
+  requestState(key) {
+    return this.getState()[key];
+  }
+
   updateSidebarOpenState(newState) {
     const prevState = this.getState().isSidebarOpen;
 

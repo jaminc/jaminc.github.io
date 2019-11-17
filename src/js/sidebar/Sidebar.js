@@ -1,6 +1,8 @@
 import {
   ESCAPE_KEY,
   TAB_KEY,
+  SIDEBAR_OPEN_STATE,
+  SCROLLBAR_WIDTH,
 } from '../constants';
 import {
   isSmallWidth,
@@ -75,12 +77,12 @@ class Sidebar {
     }
 
     document.body.style.paddingRight = isOpen
-      ? `${this.model.getState().scrollbarWidth}px`
+      ? `${this.model.requestState(SCROLLBAR_WIDTH)}px`
       : '';
   }
 
   isOpen() {
-    return this.model.getState().isSidebarOpen;
+    return this.model.requestState(SIDEBAR_OPEN_STATE);
   }
 
   onClickSidebarButton(event) {
