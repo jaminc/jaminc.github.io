@@ -69,8 +69,9 @@ export const elapsedTime = (startYear, startMonth) => {
   const startYearNumber = parseInt(startYear, 10);
   const startMonthNumber = parseInt(startMonth, 10);
   const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1;
 
-  let months = currentDate.getMonth() + 1 - startMonthNumber;
+  let months = currentMonth - startMonthNumber;
   let years = currentDate.getFullYear() - startYearNumber;
 
   if (currentMonth < startMonthNumber) {
