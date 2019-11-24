@@ -7,6 +7,7 @@ import {
   resolveOnScroll,
   resolveOnWindowWidth,
 } from './util/LazyLoadUtil';
+import updateWorkExperienceElapsedTime from './WorkExperience/WorkExperienceElapsedTime';
 
 class Application {
   constructor() {
@@ -15,8 +16,9 @@ class Application {
     });
   }
 
-  async start() {
+  start() {
     this.loadViews();
+    updateWorkExperienceElapsedTime();
   }
 
   static views() {
