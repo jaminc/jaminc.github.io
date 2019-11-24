@@ -64,3 +64,29 @@ export const getScrollbarWidth = () => {
 
   return widthNoScrollbar - widthWithScrollbar || 0;
 };
+
+export const elapsedTime = (startYear, startMonth) => {
+  const startYearNumber = parseInt(startYear, 10);
+  const startMonthNumber = parseInt(startMonth, 10);
+  const currentDate = new Date();
+
+  let months = currentDate.getMonth() + 1 - startMonthNumber;
+  let years = currentDate.getFullYear() - startYearNumber;
+
+  if (currentMonth < startMonthNumber) {
+    months += 12;
+    years -= 1;
+  }
+
+  let yearString = years ? `${years} Year` : '';
+  let monthString = months ? `${months} Month` : '';
+
+  if (years > 1) {
+    yearString += 's';
+  }
+  if (months > 1) {
+    monthString += 's';
+  }
+
+  return `${yearString} ${monthString}`.trim();
+};
