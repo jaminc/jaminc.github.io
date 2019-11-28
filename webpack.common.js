@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
+  // entry: ['babel-polyfill', './src/index.ts'],
   output: {
     filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -46,6 +47,11 @@ module.exports = {
           'css-loader', // translates CSS into CommonJS
           'sass-loader', // compiles Sass to CSS, using Node Sass by default
         ],
+      },
+      {
+        test: /\.ts(x?)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.m?js$/,
