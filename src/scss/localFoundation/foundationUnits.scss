@@ -86,7 +86,7 @@ $global-font-size: 100% !default;
 
   // Calculate rem if units for $value is not rem or em
   @if unit($value) != 'rem' {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
+    $value: calc(strip-unit($value) / strip-unit($base)) * 1rem;
   }
 
   // Turn 0rem into 0
@@ -140,7 +140,7 @@ $global-font-size: 100% !default;
 
   // 'px'
   @if unit($value) == 'px' {
-    @return strip-unit($value) / strip-unit($base);
+    @return calc(strip-unit($value) / strip-unit($base));
   }
 
   // assume that line-heights greatern then 10 are meant to be absolute in 'px'
