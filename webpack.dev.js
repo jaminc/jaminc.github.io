@@ -7,7 +7,6 @@ const config = merge.smartStrategy({ 'module.rules.use': 'prepend' })(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
     hot: true,
   },
   plugins: [
