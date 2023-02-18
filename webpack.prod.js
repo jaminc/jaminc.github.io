@@ -1,10 +1,11 @@
-const { merge } = require('webpack-merge');
+const { mergeWithRules } = require('webpack-merge');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common.js');
 
-const config = merge(common, {
+const config = mergeWithRules({ module: { rules: { test: "match", use: 'prepend' } } })(common, {
   mode: 'production',
   output: {
     publicPath: 'dist/',
@@ -27,7 +28,21 @@ const config = merge(common, {
       template: 'src/templates/index.hbs',
       filename: '../index.html',
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].css',
+    }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+        ],
+      },
+    ],
+  },
 });
 
 module.exports = config;
