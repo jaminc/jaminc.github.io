@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: [
+    'babel-polyfill',
+    './src/index.js',
+    './src/scss/main.scss'
+  ],
   output: {
     filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
