@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Foundation for Sites by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -14,7 +16,7 @@ $global-font-size: 100% !default;
 ///
 /// @returns {Number} The same number, sans unit.
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, ($num * 0 + 1));
 }
 
 /// Converts one or more pixel values into matching rem values.

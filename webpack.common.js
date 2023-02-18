@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
-  // entry: ['babel-polyfill', './src/index.ts'],
   output: {
     filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -17,14 +16,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              context: path.resolve(__dirname, 'src/assets'),
-              outputPath: 'assets',
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              disable: true, // webpack@2.x and newer
+              esModule: false,
             },
           },
         ],
@@ -33,8 +25,8 @@ module.exports = {
         test: /\.hbs$/,
         use: {
           loader: 'handlebars-loader',
-          query: {
-            inlineRequires: '/images/',
+          options: {
+            inlineRequires: '\/assets\/',
             partialDirs: [
               path.join(__dirname, 'src', 'templates', 'partials'),
             ],
