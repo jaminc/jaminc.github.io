@@ -8,6 +8,7 @@ const common = require('./webpack.common.js');
 const config = mergeWithRules({ module: { rules: { test: "match", use: 'prepend' } } })(common, {
   mode: 'production',
   output: {
+    publicPath: 'dist/',
     clean: true,
   },
   devtool: 'source-map',
@@ -25,6 +26,7 @@ const config = mergeWithRules({ module: { rules: { test: "match", use: 'prepend'
       title: 'Jamin Cheung',
       favicon: 'src/assets/images/jamin-cheung/jamin-cheung.jpg',
       template: 'src/templates/index.hbs',
+      filename: '../index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
