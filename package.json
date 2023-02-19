@@ -7,12 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "deploy": "git stash && git checkout master && npm run build && git add -A && git commit -m 'Redeploy' && git push",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint src; exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaminc/jamin-portfolio.git"
+    "url": "git+https://github.com/jaminc/jaminc.github.io.git"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/jaminc/jamin-portfolio/issues"
   },
-  "homepage": "https://github.com/jaminc/jamin-portfolio#readme",
+  "homepage": "http://jaminc.github.io/jaminc.github.io",
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
@@ -35,6 +36,7 @@
     "eslint-loader": "^3.0.4",
     "eslint-plugin-import": "^2.22.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^5.5.0",
