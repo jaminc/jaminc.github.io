@@ -1,4 +1,6 @@
 <template>
+  <ThemeSwitch />
+
   <header>Jamin Cheung</header>
 
   <section>
@@ -8,10 +10,19 @@
       love the problem solving involved with programming and am eager to further improve my skills.
     </p>
   </section>
+
+  <section>
+    <h2>Work Experience</h2>
+    <p>
+      I’m a New York-based web developer experienced in JavaScript, React, Node, and much more. I
+      love the problem solving involved with programming and am eager to further improve my skills.
+    </p>
+  </section>
 </template>
 
 <script setup>
 import TheWelcome from './components/TheWelcome.vue'
+import ThemeSwitch from './components/ThemeSwitch.vue'
 </script>
 
 <style scoped>
