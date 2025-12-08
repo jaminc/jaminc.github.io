@@ -1,6 +1,8 @@
 <template>
   <ThemeSwitch />
 
+  <Contact />
+
   <img
     alt="jamin cheung profile picture"
     src="@/assets/images/jamin-cheung.jpg"
@@ -25,6 +27,7 @@
 <script setup>
 import ThemeSwitch from './components/ThemeSwitch.vue'
 import WorkExperience from './components/WorkExperience.vue'
+import Contact from './components/Contact.vue';
 </script>
 
 <style scoped>
