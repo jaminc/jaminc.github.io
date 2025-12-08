@@ -1,6 +1,12 @@
 <template>
   <ThemeSwitch />
 
+  <img
+    alt="jamin cheung profile picture"
+    src="@/assets/images/jamin-cheung.jpg"
+    class="profile-pic"
+  />
+
   <header>Jamin Cheung</header>
 
   <section>
@@ -22,20 +28,7 @@ import WorkExperience from './components/WorkExperience.vue'
 </script>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.profile-pic {
+  border-radius: 50%;
 }
 </style>
