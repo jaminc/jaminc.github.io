@@ -13,16 +13,16 @@
 
   <section>
     <h2>Work Experience</h2>
-    <p>
-      I’m a New York-based web developer experienced in JavaScript, React, Node, and much more. I
-      love the problem solving involved with programming and am eager to further improve my skills.
-    </p>
+    <article v-for="job in jobs" :key="job.id">
+      <JobDescription :title="job.title" :bullet-points="job.tasks" />
+    </article>
   </section>
 </template>
 
 <script setup>
-import TheWelcome from './components/TheWelcome.vue'
 import ThemeSwitch from './components/ThemeSwitch.vue'
+import JobDescription from './components/JobDescription.vue'
+import jobs from './data/jobs'
 </script>
 
 <style scoped>
