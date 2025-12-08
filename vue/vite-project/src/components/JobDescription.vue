@@ -4,6 +4,7 @@
       {{ title }}
     </h3>
     <div class="company">{{ company }}</div>
+    <div v-if="dateString">{{ dateString }}</div>
     <ul class="task-list">
       <li v-for="task in tasks" :key="task.id">
         {{ task }}
@@ -13,10 +14,34 @@
 </template>
 
 <script setup>
-const { title } = defineProps({
+import { computed } from 'vue'
+import { getDateString, getDateRangeString } from '@/util/dateStrings'
+
+const { start, end } = defineProps({
   title: String,
   company: String,
   tasks: [String],
+  start: [Number],
+  end: [Number],
+})
+
+const dateString = computed(() => {
+  let result = ''
+
+  if (start) {
+    result += getDateString(start)
+  }
+
+  if (start && end) {
+    result += ` - ${getDateString(end)} ${getDateRangeString(start, end)}`
+  } else if (start) {
+    const currentDate = new Date()
+    const currentEndNumbers = [currentDate.getFullYear(), currentDate.getMonth() + 1]
+
+    result += ` - Current ${getDateRangeString(start, currentEndNumbers)}`
+  }
+
+  return result
 })
 </script>
 

@@ -2,7 +2,13 @@
   <h2>Work Experience</h2>
 
   <article v-for="job in jobs" :key="job.id">
-    <JobDescription :title="job.title" :tasks="job.tasks" :company="job.company" />
+    <JobDescription
+      :title="job.title"
+      :tasks="job.tasks"
+      :company="job.company"
+      :start="job.start"
+      :end="job.end"
+    />
   </article>
 </template>
 
