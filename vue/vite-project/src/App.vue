@@ -12,17 +12,13 @@
   </section>
 
   <section>
-    <h2>Work Experience</h2>
-    <article v-for="job in jobs" :key="job.id">
-      <JobDescription :title="job.title" :bullet-points="job.tasks" />
-    </article>
+    <WorkExperience />
   </section>
 </template>
 
 <script setup>
 import ThemeSwitch from './components/ThemeSwitch.vue'
-import JobDescription from './components/JobDescription.vue'
-import jobs from './data/jobs'
+import WorkExperience from './components/WorkExperience.vue'
 </script>
 
 <style scoped>
