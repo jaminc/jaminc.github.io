@@ -21,7 +21,9 @@ function savedTheme() {
 }
 
 function isThemeSaved() {
-  return savedTheme() !== 'auto'
+  const savedValue = savedTheme()
+
+  return savedValue === theme.light || savedValue === theme.dark
 }
 
 function setStorageDarkMode(isDarkMode) {
@@ -30,13 +32,13 @@ function setStorageDarkMode(isDarkMode) {
   return localStorage.setItem(LOCAL_STORAGE_KEY, value)
 }
 
-function toggleDarkClass(setDarkClass) {
-  document.body.classList.toggle('dark', !!setDarkClass)
+function toggleDarkClass(isDark) {
+  document.documentElement.setAttribute('data-appearance', isDark ? 'dark' : 'light')
 }
 
 const setToDark = isThemeSaved()
   ? savedTheme() === theme.dark
-  : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
 const isDarkMode = ref(setToDark)
 
 toggleDarkClass(setToDark)
