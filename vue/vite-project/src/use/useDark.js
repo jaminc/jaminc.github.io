@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-const LOCAL_STORAGE_KEY = 'isDarkMode'
+const LOCAL_STORAGE_KEY = 'appearance'
 const theme = {
   dark: 'dark',
   light: 'light',
