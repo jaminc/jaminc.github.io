@@ -1,37 +1,42 @@
 <template>
   <ThemeSwitch />
 
-  <Contact />
-
-  <img
+  <header>Jamin Cheung</header>
+  <div class="content">
+    <!-- <img
     alt="jamin cheung profile picture"
     src="@/assets/images/jamin-cheung.jpg"
     class="profile-pic"
-  />
+  /> -->
 
-  <header>Jamin Cheung</header>
+    <section class="content-section">
+      <AboutMe />
+    </section>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I’m a New York-based web developer experienced in JavaScript, React, Node, and much more. I
-      love the problem solving involved with programming and am eager to further improve my skills.
-    </p>
-  </section>
+    <section class="content-section">
+      <WorkExperience />
+    </section>
 
-  <section>
-    <WorkExperience />
-  </section>
+    <section class="content-section">
+      <ContactMe />
+    </section>
+  </div>
 </template>
 
 <script setup>
 import ThemeSwitch from './components/ThemeSwitch.vue'
 import WorkExperience from './components/WorkExperience.vue'
-import Contact from './components/Contact.vue';
+import ContactMe from './components/ContactMe.vue'
+import AboutMe from './components/AboutMe.vue'
 </script>
 
 <style scoped>
 .profile-pic {
   border-radius: 50%;
+}
+
+.content-section {
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--color-border);
 }
 </style>
