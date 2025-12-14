@@ -1,9 +1,12 @@
 <template>
-  <h2>Contact Me</h2>
+  <SectionTitle title="Contact Me" />
 
-<img alt="github icon" src="@/assets/icons/github.svg" class="icon" />
+  <img alt="github icon" src="@/assets/icons/github.svg" class="icon" />
 </template>
 
+<script setup>
+import SectionTitle from './SectionTitle.vue'
+</script>
 
 <style scoped>
 .icon {

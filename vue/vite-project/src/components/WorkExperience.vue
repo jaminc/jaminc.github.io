@@ -1,5 +1,5 @@
 <template>
-  <h2>Work Experience</h2>
+  <SectionTitle title="Work Experience" />
 
   <article v-for="job in jobs" :key="job.id">
     <JobDescription
@@ -15,4 +15,5 @@
 <script setup>
 import JobDescription from './JobDescription.vue'
 import jobs from '@/data/jobs'
+import SectionTitle from './SectionTitle.vue'
 </script>
