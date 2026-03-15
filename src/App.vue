@@ -1,7 +1,7 @@
 <template>
-  <ThemeSwitch />
-
-  <header>Jamin Cheung</header>
+  <header>
+    <h1>Jamin Cheung</h1>
+  </header>
   <div class="content">
     <!-- <img
     alt="jamin cheung profile picture"
@@ -21,6 +21,8 @@
       <ContactMe />
     </section>
   </div>
+
+  <ThemeSwitch />
 </template>
 
 <script setup>
