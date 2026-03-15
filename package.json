@@ -1,10 +1,11 @@
 {
-  "name": "vite-project",
-  "version": "0.0.0",
+  "name": "jamin-portfolio",
+  "version": "2.0.0",
+  "description": "Portfolio site",
   "private": true,
   "type": "module",
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "vite",
