@@ -1,44 +1,35 @@
 <template>
-  <header>
-    <h1>Jamin Cheung</h1>
-  </header>
-  <div class="content">
+  <div class="container">
+    <header>
+      <h1>Jamin Cheung</h1>
+    </header>
     <!-- <img
     alt="jamin cheung profile picture"
     src="@/assets/images/jamin-cheung.jpg"
     class="profile-pic"
   /> -->
+    <MainContent />
 
-    <section class="content-section">
-      <AboutMe />
-    </section>
-
-    <section class="content-section">
-      <WorkExperience />
-    </section>
-
-    <section class="content-section">
-      <ContactMe />
-    </section>
+    <ThemeSwitch />
   </div>
-
-  <ThemeSwitch />
 </template>
 
 <script setup>
 import ThemeSwitch from './components/ThemeSwitch.vue'
-import WorkExperience from './components/WorkExperience.vue'
-import ContactMe from './components/ContactMe.vue'
-import AboutMe from './components/AboutMe.vue'
+import MainContent from './components/MainContent.vue'
 </script>
 
 <style scoped>
-.profile-pic {
-  border-radius: 50%;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: auto;
+  padding: 2rem 4rem;
+  max-width: 1500px;
 }
 
-.content-section {
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--color-border);
+.profile-pic {
+  border-radius: 50%;
 }
 </style>

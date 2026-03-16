@@ -5,8 +5,9 @@
     type="checkbox"
     v-model="isChecked"
     class="theme-switch-checkbox"
+    aria-label="Toggle dark mode"
   />
-  <label class="theme-switch-label" for="theme" />
+  <label class="theme-switch-label" for="theme"></label>
 </template>
 
 <script setup>
