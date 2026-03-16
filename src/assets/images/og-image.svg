@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e6ea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg_grad)" />
+
+  <rect width="1120" height="550" x="40" y="40" rx="20" ry="20" fill="none" stroke="#cfd4da" stroke-width="3" />
+
+  <rect width="6" height="160" x="41" y="220" fill="#007bff" />
+
+  <g transform="translate(100, 200)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="90" font-weight="bold" fill="#1a1a1a">Jamin Cheung</text>
+    <text x="0" y="90" font-family="Arial, sans-serif" font-size="50" font-weight="700" fill="#343a40">Senior Software Engineer</text>
+    <text x="0" y="155" font-family="Arial, sans-serif" font-size="32" fill="#6c757d">New York City • Full Stack Expertise</text>
+  </g>
+
+  <g transform="translate(950, 230)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="200" font-weight="900" fill="#c0c5cb" text-anchor="middle" dominant-baseline="middle">10+</text>
+    <text x="0" y="125" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#a0a5ab" text-anchor="middle">YEARS EXP</text>
+  </g>
+
+  <g transform="translate(100, 430)">
+    <rect width="380" height="100" rx="12" fill="#ffffff" opacity="0.9" />
+    <text x="25" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#495057">FRONTEND</text>
+    <text x="25" y="75" font-family="monospace" font-size="26" font-weight="bold" fill="#007bff">Vue • React • TS</text>
+    
+    <rect width="450" height="100" x="400" y="0" rx="12" fill="#ffffff" opacity="0.9" />
+    <text x="425" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#495057">SYSTEMS &amp; AUTH</text>
+    <text x="425" y="75" font-family="monospace" font-size="26" font-weight="bold" fill="#28a745">Rails • Go • OAuth • SAML</text>
+  </g>
+</svg>
