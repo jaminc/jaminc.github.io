@@ -12,7 +12,7 @@ defineProps({
 
 <style scoped>
 .title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 </style>
