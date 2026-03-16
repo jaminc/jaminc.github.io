@@ -22,6 +22,7 @@ const jobs = [
     end: [2021, 11],
     tasks: [
       'Architect client-side code of product detail pages (PDP) for both Macy’s and Bloomingdale’s to account for reusability and easy mutability due to transient business requirements.',
+      'Coordinate PDP development efforts across all participating parties to ensure proper code execution of all projects within planned timeframes.',
     ],
   },
   {
