@@ -1,28 +1,30 @@
 <template>
-  <header>
-    <h1>Jamin Cheung</h1>
-  </header>
-  <div class="content">
-    <!-- <img
+  <div class="container">
+    <header>
+      <h1>Jamin Cheung</h1>
+    </header>
+    <div class="content">
+      <!-- <img
     alt="jamin cheung profile picture"
     src="@/assets/images/jamin-cheung.jpg"
     class="profile-pic"
   /> -->
 
-    <section class="content-section">
-      <AboutMe />
-    </section>
+      <section class="content-section">
+        <AboutMe />
+      </section>
 
-    <section class="content-section">
-      <WorkExperience />
-    </section>
+      <section class="content-section">
+        <WorkExperience />
+      </section>
 
-    <section class="content-section">
-      <ContactMe />
-    </section>
+      <section class="content-section">
+        <ContactMe />
+      </section>
+    </div>
+
+    <ThemeSwitch />
   </div>
-
-  <ThemeSwitch />
 </template>
 
 <script setup>
@@ -33,12 +35,16 @@ import AboutMe from './components/AboutMe.vue'
 </script>
 
 <style scoped>
+.container {
+  padding: 2rem 4rem;
+}
+
 .profile-pic {
   border-radius: 50%;
 }
 
 .content-section {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   border-top: 1px solid var(--color-border);
 }
 </style>
