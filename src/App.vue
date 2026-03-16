@@ -25,8 +25,13 @@ import MainContent from './components/MainContent.vue'
   flex-direction: column;
   gap: 2rem;
   margin: auto;
-  padding: 2rem 4rem;
+  padding: 2rem 1rem;
   max-width: 1500px;
+}
+@media screen and (min-width: 600px) {
+  .container {
+    padding: 2rem 4rem;
+  }
 }
 
 .profile-pic {
