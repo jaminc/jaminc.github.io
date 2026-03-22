@@ -11,8 +11,8 @@ const jobs = [
     start: [2021, 12],
     end: [2022, 7],
     tasks: [
-      'Build internal tooling using Node and React for pharmacists and technicians to process and fulfill patient prescriptions.',
-      'Lead a project focused on building the user interface for processing prescriptions. Duties included restructuring the existing codebase, coordinating and prioritizing the product feature requests, and managing the implementation of requirements by breaking down and assigning appropriate tasks to other engineers.',
+      'Develop mission-critical internal tooling using Node and React to optimize prescription processing workflows for pharmacy staff.',
+      'Lead the end-to-end frontend development for the prescription processing interface, improving operational efficiency and UI consistency',
     ],
   },
   {
@@ -21,7 +21,7 @@ const jobs = [
     start: [2020, 10],
     end: [2021, 11],
     tasks: [
-      'Architect client-side code of product detail pages (PDP) for both Macy’s and Bloomingdale’s to account for reusability and easy mutability due to transient business requirements.',
+      'Architect scalable client-side code for Product Detail Pages (PDP) across Macy’s and Bloomingdale’s, serving millions of monthly active users.',
       'Coordinate PDP development efforts across all participating parties to ensure proper code execution of all projects within planned timeframes.',
     ],
   },
@@ -31,7 +31,7 @@ const jobs = [
     start: [2018, 12],
     end: [2020, 9],
     tasks: [
-      'Lead team of 8 comprised of multiple roles to craft and deliver stories for PDP.',
+      'Lead a cross-functional team of 8 engineers, mentoring junior staff and streamlining the delivery of core e-commerce features.',
       'Ensure code quality and maintainability through code reviews.',
     ],
   },
