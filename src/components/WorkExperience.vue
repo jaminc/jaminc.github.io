@@ -5,6 +5,7 @@
     <JobDescription
       :title="job.title"
       :tasks="job.tasks"
+      :categories="job.categories"
       :company="job.company"
       :start="job.start"
       :end="job.end"
