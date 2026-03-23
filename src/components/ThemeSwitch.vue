@@ -1,13 +1,15 @@
 <template>
-  <input
-    @change="setDarkMode(isChecked)"
-    id="theme"
-    type="checkbox"
-    v-model="isChecked"
-    class="theme-switch-checkbox"
-    aria-label="Toggle dark mode"
-  />
-  <label class="theme-switch-label" for="theme"></label>
+  <div class="theme-switch-container">
+    <input
+      @change="setDarkMode(isChecked)"
+      id="theme"
+      type="checkbox"
+      v-model="isChecked"
+      class="theme-switch-checkbox"
+      aria-label="Toggle dark mode"
+    />
+    <label class="theme-switch-label" for="theme"></label>
+  </div>
 </template>
 
 <script setup>
@@ -20,6 +22,10 @@ const isChecked = ref(isDarkMode)
 </script>
 
 <style scoped>
+.theme-switch-container {
+  position: relative;
+}
+
 .theme-switch-checkbox {
   position: absolute;
   opacity: 0;
