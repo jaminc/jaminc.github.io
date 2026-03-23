@@ -18,3 +18,11 @@ import JobDescription from './JobDescription.vue'
 import jobs from '@/data/jobs'
 import SectionTitle from './SectionTitle.vue'
 </script>
+
+<style scoped>
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+</style>
