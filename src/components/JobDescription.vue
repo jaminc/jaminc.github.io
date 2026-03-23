@@ -5,11 +5,24 @@
     </h3>
     <div class="company">{{ company }}</div>
     <div v-if="dateString">{{ dateString }}</div>
-    <ul class="task-list">
+
+    <ul v-if="tasks" class="task-list">
       <li v-for="task in tasks" :key="task.id">
         {{ task }}
       </li>
     </ul>
+
+    <div v-if="categories">
+      <template v-for="category in categories">
+        <h4>{{ category.label }}</h4>
+
+        <ul>
+          <li v-for="item in category.items">
+            {{ item }}
+          </li>
+        </ul>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -21,6 +34,7 @@ const { start, end } = defineProps({
   title: String,
   company: String,
   tasks: [String],
+  categories: [Object],
   start: [Number],
   end: [Number],
 })

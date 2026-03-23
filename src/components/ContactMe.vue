@@ -2,11 +2,11 @@
   <SectionTitle title="Contact Me" />
 
   <div class="contact-container">
-    <a href="http://www.github.com/jaminc">
-      <img alt="github icon" src="@/assets/icons/github.svg" class="icon" />
+    <a href="http://www.github.com/jaminc" aria-label="Github Profile">
+      <img alt="" src="@/assets/icons/github.svg" class="icon" aria-hidden="true" />
     </a>
-    <a href="http://www.linkedin.com/in/jamincheung">
-      <img alt="github icon" src="@/assets/icons/linkedin.svg" class="icon" />
+    <a href="http://www.linkedin.com/in/jamincheung" aria-label="Linkedin Profile">
+      <img alt="" src="@/assets/icons/linkedin.svg" class="icon" aria-hidden="true" />
     </a>
   </div>
 </template>

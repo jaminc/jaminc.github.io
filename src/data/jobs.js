@@ -3,7 +3,27 @@ const jobs = [
     title: 'Senior Software Engineer',
     company: 'Justworks',
     start: [2022, 10],
-    tasks: [],
+    categories: [
+      {
+        label: 'Strategic Technical Leadership & Identity Architecture',
+        items: [
+          'Architected and managed the deployment of the Okta-hosted login engine, a mission-critical gateway leveraged across the entire Justworks ecosystem.',
+          'Designed and spearheaded the unified account creation flow and the "Global Identity Settings" standalone application, integrating identity provisioning across all core Justworks apps.',
+          'Served as Technical Lead for the enterprise-wide KYC (Know Your Customer) rollout, architecting a multi-phase implementation for the entire member base.',
+          'Delivered risk-based authentication logic to reduce "MFA fatigue," streamlining the login experience for thousands of low-risk users.',
+          'Acted as the primary CIAM Point of Contact during active security threats, collaborating with the Payments team to identify and suspend compromised accounts, preventing unauthorized financial transactions.',
+        ],
+      },
+      {
+        label: 'Infrastructure & Operational Excellence',
+        items: [
+          'Spearheaded the rapid deployment of a dedicated Okta Tour tenant for sales/demo initiatives, defining the integration roadmap for all other engineering domains to follow.',
+          'Coached emerging engineers on scope management and "MVP-first" mentalities, ensuring team delivery remained on track through major organizational re-orgs.',
+          'Eliminated manual administrative overhead by implementing PR-driven automation for Okta admin account provisioning, replacing manual tickets with self-service developer tools.',
+          'Scaled specialized CIAM expertise across the team by establishing a knowledge-sharing culture, resulting in 100% on-call self-reliance through guided mentorship and collaborative run-book development.',
+        ],
+      },
+    ],
   },
   {
     title: 'Senior Software Engineer',
@@ -11,8 +31,8 @@ const jobs = [
     start: [2021, 12],
     end: [2022, 7],
     tasks: [
-      'Build internal tooling using Node and React for pharmacists and technicians to process and fulfill patient prescriptions.',
-      'Lead a project focused on building the user interface for processing prescriptions. Duties included restructuring the existing codebase, coordinating and prioritizing the product feature requests, and managing the implementation of requirements by breaking down and assigning appropriate tasks to other engineers.',
+      'Develop mission-critical internal tooling using Node and React to optimize prescription processing workflows for pharmacy staff.',
+      'Lead the end-to-end frontend development for the prescription processing interface, improving operational efficiency and UI consistency',
     ],
   },
   {
@@ -21,7 +41,7 @@ const jobs = [
     start: [2020, 10],
     end: [2021, 11],
     tasks: [
-      'Architect client-side code of product detail pages (PDP) for both Macy’s and Bloomingdale’s to account for reusability and easy mutability due to transient business requirements.',
+      'Architect scalable client-side code for Product Detail Pages (PDP) across Macy’s and Bloomingdale’s, serving millions of monthly active users.',
       'Coordinate PDP development efforts across all participating parties to ensure proper code execution of all projects within planned timeframes.',
     ],
   },
@@ -31,7 +51,7 @@ const jobs = [
     start: [2018, 12],
     end: [2020, 9],
     tasks: [
-      'Lead team of 8 comprised of multiple roles to craft and deliver stories for PDP.',
+      'Lead a cross-functional team of 8 engineers, mentoring junior staff and streamlining the delivery of core e-commerce features.',
       'Ensure code quality and maintainability through code reviews.',
     ],
   },

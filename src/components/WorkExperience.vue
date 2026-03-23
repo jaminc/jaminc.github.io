@@ -1,17 +1,16 @@
 <template>
   <SectionTitle title="Work Experience" />
 
-  <div class="jobs">
-    <article v-for="job in jobs" :key="job.id">
-      <JobDescription
-        :title="job.title"
-        :tasks="job.tasks"
-        :company="job.company"
-        :start="job.start"
-        :end="job.end"
-      />
-    </article>
-  </div>
+  <article v-for="job in jobs" :key="job.id">
+    <JobDescription
+      :title="job.title"
+      :tasks="job.tasks"
+      :categories="job.categories"
+      :company="job.company"
+      :start="job.start"
+      :end="job.end"
+    />
+  </article>
 </template>
 
 <script setup>
