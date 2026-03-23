@@ -6,13 +6,13 @@
     <div class="company">{{ company }}</div>
     <div v-if="dateString">{{ dateString }}</div>
 
-    <ul v-if="tasks" class="task-list">
+    <ul v-if="tasks.length" class="task-list">
       <li v-for="task in tasks" :key="task.id">
         {{ task }}
       </li>
     </ul>
 
-    <div v-if="categories">
+    <div v-if="categories.length">
       <template v-for="category in categories">
         <h4>{{ category.label }}</h4>
 
@@ -30,16 +30,23 @@
 import { computed } from 'vue'
 import { getDateString, getDateRangeString } from '@/util/dateStrings'
 
-const { start, end } = defineProps({
+const props = defineProps({
   title: String,
   company: String,
-  tasks: [String],
-  categories: [Object],
-  start: [Number],
-  end: [Number],
+  tasks: {
+    type: Array,
+    default: () => [],
+  },
+  categories: {
+    type: Array,
+    default: () => [],
+  },
+  start: Array,
+  end: Array,
 })
 
 const dateString = computed(() => {
+  const { start, end } = props
   let result = ''
 
   if (start) {
@@ -73,9 +80,5 @@ const dateString = computed(() => {
 .company {
   font-weight: 1rem;
   font-weight: bold;
-}
-
-.task-list {
-  /* margin: 0; */
 }
 </style>
